@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+           height: 100vh;
+           background: radial-gradient(circle at top ,#1e293b,#020617);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+
+        }
+        .login-box{
+            width:350px;
+            padding : 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 0, .3);
+            backdrop-filter: blur(20px);
+            box-shadow:0 0 40px rgba(0, 0, 0,0.6);
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+
+
+        }
+        /* animated glowing border */
+         .login-box::before{
+           
+              content:"";
+            position: absolute;
+            width:200%;
+            height: 200%;
+            background: conic-gradient(#ff00cc,#3333ff,#00ffcc,#ffcc00,#ff00cc);
+            animation: spin 5s linear infinite;
+            opacity: 0.2;
+
+         }
+          .login-box::after{
+            content: "";
+            position: absolute;
+            inset: 3px;
+            background: rgba(2 , 4,6,0.95);
+            border-radius: 18px;
+          }
+          .login-box:hover{
+            transform: rotateY('8deg'),rotateX('5deg'),scale(1.03);
+          }
+          h2{
+            position: relative;
+            color: white;
+            text-align: center;
+            margin-bottom: 14px;
+            z-index: 1;
+          }
+          .input-box{
+              position: relative;
+            margin-bottom: 25px;
+            z-index: 1;
+          }
+          .input-box input{
+            width: 100%;
+            padding: 17px;
+            background: transparent;
+            border: 1px solid #555;
+            outline: none;
+            color: white;
+            border-radius: 8px;
+            transition: 0.3s;
+          }
+           .input-box input:focus{
+                        border-color: #00f7ff;
+            box-shadow: 0 0 10px #00f7ff;
+
+           }
+           .input-box label{
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            color: #aaa;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: 0.3s;
+
+           }
+              .input-box input:focus~label,
+        .input-box input:valid~label{
+            top:-8px;
+            font-size: 12px;
+            color: #00f7ff;
+        }
+        button{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg,#00f7ff,#ff00cc);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.4s;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+
+
+        }
+           button:hover{
+            transform:scale(1.05);
+            box-shadow: 0 0 20px #00f7ff,0 0 40px #ff00cc;
+        }
+        button:active{
+            transform: scale(0.95);
+            box-shadow: inset 0 0 10px #000;
+        }
+        /*animation */
+        @keyframes spin{
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+         <div class="input-box">
+            <input type="text" required>
+            <label >username</label>
+        </div>
+        <div class="input-box">
+            <input type="password" required>
+            <label>password</label>
+        </div>
+        <button>login</button>
+    </div>
+</body>
+</html>
