@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav{
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo{
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu{
+            list-style: none;
+            display: flex;
+            gap:30px;
+        }
+        .menu li a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            position: relative;
+            transition: 0.3s;
+        }
+        .menu li a::after{
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: #00ffcc;
+            left: 0;
+            bottom: -5px;
+            transition: 0.4s;
+        }
+        .menu li a:hover::after{
+            width: 100%;
+        }
+        menu li a:hover{
+            color: #00ffcc;
+        }
+        #toggle{
+            display: none;
+        }
+        .menu-btn{
+            display: none;
+            font-size:28px;
+            color: white;
+            cursor: pointer;
+        }
+        @media(max-width:768px)
+        {
+            .menu{
+                position: absolute;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: rgba(0,0,0,0.9);
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                transition: 0.4s;
+            }
+            #toggle:checked ~ .menu{
+                left: 0;
+            }
+            .menu li{
+                margin: 15px 0;
+            }
+            .menu-btn{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">my site</div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="menu-btn">menu</label>
+        <ul class="menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">contact us</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

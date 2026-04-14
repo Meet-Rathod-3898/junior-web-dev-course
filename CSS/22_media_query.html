@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        } 
+        .card{
+            width: 250px;
+            height: 200px;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card:hover{
+            transform: translatey(-15px)scale(1.05);
+            background: #f0f8ff;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+        }
+        .card h2{
+            margin-top: 40px;
+        }
+        .card p{
+            font-size:14px;
+        }
+        /*mobile phone*/
+        @media(max-width:600px)
+        {
+            .container
+            {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card{
+                width: 90%;
+                margin-bottom:20px ;
+                background: #ffecd2;
+            }
+        }
+        /*tablet*/
+        @media(min-width:601px) and (max-width:900px)
+        {
+            .container
+            {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .card
+            {
+                width: 45%;
+                margin: 10px;
+                background:#d4fc79
+            }
+        }
+        /*computer*/
+        @media(min-width:901px)
+        {
+           .card
+           {
+            background: white;
+           } 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="home.html" class="card">
+            <h2>home</h2>
+            <p>click to open home page</p>
+        </a>
+        <a href="about.html" class="card">
+            <h2>about us</h2>
+            <p>
+                click to open about us page
+            </p>
+        </a>
+        <a href="contact.html" class="card">
+            <h2>contact</h2>
+            <p>
+                click to open contact us page
+            </p>
+        </a>
+    </div>
+</body>
+</html>
